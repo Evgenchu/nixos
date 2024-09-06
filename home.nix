@@ -54,7 +54,7 @@
     cmatrix
     zip
     azure-cli
-    awscli
+    awscli2
     kubelogin
     python312Packages.pip
     nerdfonts
