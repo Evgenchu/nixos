@@ -29,7 +29,6 @@
     gcc
     fastfetch
     discord
-    vscode
     pywal
     btop
     minikube
