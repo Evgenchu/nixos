@@ -29,8 +29,8 @@
     gcc
     fastfetch
     discord
-    pywal
     btop
+    pywal
     minikube
     kubectl
     killall
@@ -41,13 +41,13 @@
     gnumake
     usbutils
     gdb
+    fzf
     openvpn
     openssl
     freerdp
     cargo
     go
     gotools
-    opentofu
     lazygit
     gh
     cmatrix
@@ -64,6 +64,9 @@
     ffmpeg
     yazi
     colorls
+    luarocks
+    lua
+    wl-clipboard
   ]; # Home Manager is pretty good at managing dotfiles. The primary way to manage                                                        
   # plain files is through 'home.file'.                                                                                                   
   home.file = {
