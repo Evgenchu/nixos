@@ -63,6 +63,7 @@
     pciutils
     ffmpeg
     yazi
+    vesktop
     colorls
     luarocks
     lua

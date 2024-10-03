@@ -1,6 +1,3 @@
-# TODO: CTF packages
-# TODO: Sandbox
-# TODO: cyber sys conf
 { lib, config,pkgs, ... }: {                                  
   options = {                                            
     CTF.enable = lib.mkEnableOption "enbable CTF packages"; 
@@ -12,7 +9,7 @@
       john
       aircrack-ng
       audacity
-      hydra
+      thc-hydra
     ];
   };
 }
