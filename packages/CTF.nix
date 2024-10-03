@@ -4,7 +4,7 @@
     CTF.enable = lib.mkEnableOption "enbable CTF packages"; 
   };                                                     
   config = lib.mkIf config.CTF.enable { 
-    environment.systemPackages = with pkgs; [
+    home.packages = with pkgs; [
       nmap
     ];
   };
