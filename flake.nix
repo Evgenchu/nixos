@@ -28,6 +28,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.evgeni = import ./home.nix;
+              home-manager.extraSpecialArgs = specialArgs;
             }
           ];
         };
