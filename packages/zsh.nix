@@ -12,8 +12,7 @@
       dotDir = ".config/zsh";
       shellAliases = {
         v = "nvim";
-        ls = "colorls -A --sd";
-        ll = "colorls -lA --sd";
+        ls = "lsd";
       };
       initExtra = ''                                                              
         [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh      

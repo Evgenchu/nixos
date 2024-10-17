@@ -63,7 +63,7 @@
     ffmpeg
     yazi
     vesktop
-    colorls
+    lsd
     luarocks
     lua
     wl-clipboard
