@@ -6,8 +6,9 @@
     programs.zsh = {
       enable = true;
       enableCompletion = true;
+      
       syntaxHighlighting.enable = true;
-      #autosuggestion.enable = true; commneted because could leak info            
+      autosuggestion.enable = true;            
       dotDir = ".config/zsh";
       shellAliases = {
         v = "nvim";

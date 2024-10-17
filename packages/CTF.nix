@@ -1,4 +1,3 @@
-# TODO: CTF packages
 { lib, config,pkgs, ... }: {                                  
   options = {                                            
     CTF.enable = lib.mkEnableOption "enbable CTF packages"; 

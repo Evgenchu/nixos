@@ -3,17 +3,24 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... } @inputs:
+  outputs = inputs@{ nixpkgs, home-manager,nixpkgs-stable, ... }:
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        nixos = nixpkgs.lib.nixosSystem rec{
           system = "x86_64-linux";
+          specialArgs = {
+            pkgs-stable = import nixpkgs-stable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          };
           modules = [
             ./configuration.nix
             home-manager.nixosModules.home-manager
