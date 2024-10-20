@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager,nixpkgs-stable, ... }:
+  outputs = { nixpkgs, home-manager,nixpkgs-stable, ... }:
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem rec{
