@@ -11,10 +11,14 @@
   };
 
   outputs = { nixpkgs, home-manager,nixpkgs-stable, ... }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem rec{
-          system = "x86_64-linux";
+          inherit system;
           specialArgs = {
             pkgs-stable = import nixpkgs-stable {
               inherit system;
@@ -33,5 +37,6 @@
           ];
         };
       };
+      devShells."x86_64-linux".default = import ./shell.nix {inherit pkgs;};
     };
 }

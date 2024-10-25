@@ -156,7 +156,7 @@
   environment.sessionVariables = {
       FLAKE = "/etc/nixos/";
     };
-
+  
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     lua-language-server
