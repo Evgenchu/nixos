@@ -37,6 +37,6 @@
           ];
         };
       };
-      devShells."x86_64-linux".default = import ./shell.nix {inherit pkgs;};
+      devShells.${system}.default = pkgs.callPackage ./shell.nix {inherit pkgs;};
     };
 }
