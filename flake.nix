@@ -38,7 +38,7 @@
         };
       };
       devShells.${system} = {
-        python = pkgs.callPackage ./pythonShell.nix {inherit pkgs;};
+        python = pkgs.callPackage ./shells/pythonShell.nix {inherit pkgs;};
       };
     };
 }
