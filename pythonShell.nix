@@ -5,7 +5,6 @@
       python-pkgs.tkinter
       python-pkgs.pandas
       python-pkgs.scipy
-      python-pkgs.matplotlib
       python-pkgs.requests
     ]))
   ];
