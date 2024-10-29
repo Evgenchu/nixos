@@ -1,4 +1,4 @@
-# TODO: This module could get some improvements probably.... read more about "_module" in flake.nix
+# NOTE: try to do something "juicy" here cmon
 { lib, ... }: {
   imports = [
     ./zsh.nix

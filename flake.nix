@@ -8,9 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager,nixpkgs-stable, ... }:
+  outputs = { nixpkgs, home-manager,nixpkgs-stable,nixvim, ... } @inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -22,6 +26,7 @@
           specialArgs = {
             pkgs-stable = import nixpkgs-stable {
               inherit system;
+              inherit inputs;
               config.allowUnfree = true;
             };
           };

@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ pkgs,inputs, ... }:
 
 {
   imports = [
     ./packages/packagebundle.nix
+    inputs.nixvim.homeManagerModules.nixvim
   ];
   # Home Manager needs a bit of information about you and the paths it should                                                             
   # manage.                                                                                                                               
@@ -95,6 +96,5 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
-                                                                                                          
   programs.home-manager.enable = true;
 }                                                                                                                                         
