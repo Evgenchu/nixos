@@ -1,3 +1,4 @@
+# TODO: This module could get some improvements probably.... read more about "_module" in flake.nix
 { lib, ... }: {
   imports = [
     ./zsh.nix
