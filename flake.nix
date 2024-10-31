@@ -14,21 +14,21 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager,nixpkgs-stable,nixvim, ... } @inputs:
+  outputs = { nixpkgs, home-manager, nixpkgs-stable, nixvim, ... } @ inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem rec{
+        nixos = nixpkgs.lib.nixosSystem rec {
           inherit system;
           specialArgs = {
             pkgs-stable = import nixpkgs-stable {
               inherit system;
-              inherit inputs;
               config.allowUnfree = true;
             };
+            inherit inputs;
           };
           modules = [
             ./configuration.nix
@@ -43,7 +43,7 @@
         };
       };
       devShells.${system} = {
-        python = pkgs.callPackage ./shells/pythonShell.nix {inherit pkgs;};
+        python = pkgs.callPackage ./shells/pythonShell.nix { inherit pkgs; };
       };
     };
 }
