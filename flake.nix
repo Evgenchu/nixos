@@ -8,27 +8,22 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-stable, nixvim, ... } @ inputs:
+  outputs = { nixpkgs, home-manager,nixpkgs-stable, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem rec {
+        nixos = nixpkgs.lib.nixosSystem rec{
           inherit system;
           specialArgs = {
             pkgs-stable = import nixpkgs-stable {
               inherit system;
               config.allowUnfree = true;
             };
-            inherit inputs;
           };
           modules = [
             ./configuration.nix
@@ -43,7 +38,7 @@
         };
       };
       devShells.${system} = {
-        python = pkgs.callPackage ./shells/pythonShell.nix { inherit pkgs; };
+        python = pkgs.callPackage ./shells/pythonShell.nix {inherit pkgs;};
       };
     };
 }

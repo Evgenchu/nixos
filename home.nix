@@ -1,10 +1,8 @@
-{ pkgs,inputs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ./packages/packagebundle.nix
-    ./nixvim/nixvim.nix
-    inputs.nixvim.homeManagerModules.nixvim
   ];
   # Home Manager needs a bit of information about you and the paths it should                                                             
   # manage.                                                                                                                               
