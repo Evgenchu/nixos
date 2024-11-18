@@ -38,7 +38,7 @@
     nodejs
     wireshark
     gnumake
-    usbutils
+   usbutil
     gdb
     fzf
     openvpn
@@ -61,12 +61,12 @@
     pciutils
     ffmpeg
     yazi
-    vesktop
     lsd
     luarocks
     lua
     wl-clipboard
     nixpkgs-fmt
+    vesktop
   ]; # Home Manager is pretty good at managing dotfiles. The primary way to manage                                                        
   # plain files is through 'home.file'.   
   home.file = {
