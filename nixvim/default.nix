@@ -9,6 +9,7 @@
     ./core/lazygit.nix
     ./core/indentline.nix
     ./core/autopairs.nix
+    ./core/toggleterm.nix
     ./settings.nix
   ];
   programs.nixvim = {
