@@ -38,7 +38,7 @@
     nodejs
     wireshark
     gnumake
-   usbutil
+    usbutils
     gdb
     fzf
     openvpn
@@ -92,8 +92,6 @@
   #                                                                                                                                       
   #  /etc/profiles/per-user/evgeni/etc/profile.d/hm-session-vars.sh                                                                       
   #                                                                                                                                       
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = {};
   programs.home-manager.enable = true;
 }                                                                                                                                         
