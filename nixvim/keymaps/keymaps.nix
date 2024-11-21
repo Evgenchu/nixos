@@ -14,6 +14,12 @@
 	action = "<cmd>Neotree toggle dir=~<cr>";
 	options = {desc = "Open/Close Neotree (root dir)";}; 
       }
+      {
+        mode = ["n"];
+	key = "<leader>g";
+	action = "<cmd>LazyGit<cr>";
+	options = {desc = "Open lazygit";};
+      }
     ];
   };
 }
