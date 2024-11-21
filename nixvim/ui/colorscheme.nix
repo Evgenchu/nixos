@@ -1,9 +1,7 @@
 {
-  programs.nixvim = {
-    plugins = {
-      transparent =  {
-      	enable = true;
-      };
+  programs.nixvim.plugins = {
+    transparent =  {
+      enable = true;
     };
   };
 }

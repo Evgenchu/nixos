@@ -1,14 +1,12 @@
 {
-  programs.nixvim = {
-    plugins = {
-      lualine = {
-        enable = true;
-	settings = {
-	  options = {
-	    globalstatus = true;
-	  }; 
-	};
+  programs.nixvim.plugins = {
+    lualine = {
+      enable = true;
+      settings = {
+        options = {
+	  globalstatus = true;
+        }; 
       };
     };
   };
-}
+}
