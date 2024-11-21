@@ -38,9 +38,6 @@
                 extraSpecialArgs = specialArgs;
                 users.evgeni = {
                   imports =  [./home.nix];
-                  programs.nixvim = {
-                    enable = true;
-                  };
                 };
               };
             }
