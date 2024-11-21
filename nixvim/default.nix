@@ -1,7 +1,7 @@
 {
   imports = [
-    ./colorscheme.nix
-    ./lualine.nix
+    ./ui/colorscheme.nix
+    ./ui/lualine.nix
   ];
   programs.nixvim = {
     enable = true;
