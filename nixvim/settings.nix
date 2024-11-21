@@ -1,5 +1,5 @@
 {
-  config = {
+  programs.nixvim.config = {
     extraConfigLuaPre =
       ''
         vim.fn.sign_define("diagnosticsignerror", { text = " ", texthl = "diagnosticerror", linehl = "", numhl = "" })
@@ -15,7 +15,6 @@
     opts = {
       number = true;
       relativenumber = true;
-      clipboard = "unnamedplus";
       tabstop = 2;
       softtabstop = 2;
       showtabline = 2;
@@ -25,7 +24,6 @@
       breakindent = true;
       cursorline = true;
       scrolloff = 8;
-      linebreak = true;
       spell = false;
       swapfile = false;
       timeoutlen = 300;
