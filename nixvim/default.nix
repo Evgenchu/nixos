@@ -6,6 +6,8 @@
     ./keymaps/keymaps.nix
     ./core/telescope.nix
     ./core/lazygit.nix
+    ./core/indentline.nix
+    ./settings.nix
   ];
   programs.nixvim = {
     enable = true;
