@@ -10,6 +10,8 @@
     ./core/indentline.nix
     ./core/autopairs.nix
     ./core/toggleterm.nix
+    ./core/treesitter.nix
+    ./core/copilot.nix
     ./settings.nix
   ];
   programs.nixvim = {
