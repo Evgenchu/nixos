@@ -12,7 +12,8 @@
     ./core/toggleterm.nix
     ./core/treesitter.nix
     ./core/copilot.nix
-    ./core/luasnip
+    ./core/luasnip.nix
+    ./core/cmp.nix
     ./settings.nix
     ./languages/python.nix
   ];
