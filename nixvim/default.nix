@@ -16,7 +16,7 @@
     ./core/cmp.nix
     ./settings.nix
     ./languages/python.nix
-    ./lanuages/lsp.nix
+    ./languages/lsp.nix
   ];
   programs.nixvim = {
     enable = true;
