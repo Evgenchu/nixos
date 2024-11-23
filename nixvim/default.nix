@@ -13,6 +13,7 @@
     ./core/treesitter.nix
     ./core/copilot.nix
     ./settings.nix
+    ./languages/python.nix
   ];
   programs.nixvim = {
     enable = true;
