@@ -1,10 +1,6 @@
 {
   programs.nixvim = {
     plugins = {
-      conform-nvim = {
-        enable = true;
-        settings = { formatters_by_ft.python = [ "black" ]; };
-      };
       lsp.servers.pylsp = {
         enable = true;
         settings.plugins = {
@@ -21,7 +17,6 @@
           yapf.enabled = true;
         };
       };
-      none-ls.sources.formatting.black.enable = true;
     };
   };
 }

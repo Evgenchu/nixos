@@ -15,7 +15,7 @@
     ./core/luasnip.nix
     ./core/cmp.nix
     ./core/todo-comments.nix
-    ./core/navic.nix 
+    ./core/conform.nix
     ./settings.nix
     ./languages/python.nix
     ./languages/lsp.nix
