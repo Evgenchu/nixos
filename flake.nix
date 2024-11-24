@@ -8,10 +8,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim.url = "github:nix-community/nixvim";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-stable, nixvim, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-stable, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -34,13 +33,9 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                sharedModules = [ nixvim.homeManagerModules.nixvim ];
                 extraSpecialArgs = specialArgs;
                 users.evgeni = {
                   imports =  [./home.nix];
-                  programs.nixvim = {
-                    enable = true;
-                  };
                 };
               };
             }
