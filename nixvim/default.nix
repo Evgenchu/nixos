@@ -14,6 +14,7 @@
     ./core/copilot.nix
     ./core/luasnip.nix
     ./core/cmp.nix
+    ./core/todo-comments.nix 
     ./settings.nix
     ./languages/python.nix
     ./languages/lsp.nix
