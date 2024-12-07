@@ -14,7 +14,6 @@
       file
       exiftool
       steghide
-      stegsolve
     ];
   };
 }

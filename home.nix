@@ -54,7 +54,6 @@
     awscli2
     kubelogin
     python312Packages.pip
-    nerdfonts
     obs-studio
     docker-compose
     zathura

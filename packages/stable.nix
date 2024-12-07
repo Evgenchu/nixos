@@ -6,6 +6,7 @@
   config = lib.mkIf config.stable.enable { 
     home.packages = with pkgs-stable; [
       azure-cli
+      nerdfonts
     ];
   };
 }
