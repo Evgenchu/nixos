@@ -129,6 +129,7 @@
     wget
     git
     nh
+    vim
   ];
   environment.sessionVariables = {
       FLAKE = "/etc/nixos/";
