@@ -11,7 +11,7 @@
       autosuggestion.enable = true;            
       dotDir = ".config/zsh";
       shellAliases = {
-        v = "nvim";
+        v = "nix run /home/evgeni/.config/nixvim";
         ls = "lsd";
       };
       initExtra = ''                                                              
