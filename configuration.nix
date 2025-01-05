@@ -4,17 +4,17 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.loader.systemd-boot.configurationLimit = 7;
-  boot.initrd.luks.devices."luks-2606f749-902b-41e6-816e-b1a0642ae64c".device = "/dev/disk/by-uuid/2606f749-902b-41e6-816e-b1a0642ae64c";
+  boot.initrd.luks.devices."luks-2606f749-902b-41e6-816e-b1a0642ae64c".device =
+    "/dev/disk/by-uuid/2606f749-902b-41e6-816e-b1a0642ae64c";
   boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = "nixos";
 
@@ -52,7 +52,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   #NVIDIA stuff
-# hardware.graphics = {
+  # hardware.graphics = {
   #   enable = true;
   #   #driSupport = true;
   #   enable32Bit = true;
@@ -80,7 +80,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-
   # Virtualization part
   virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
@@ -88,7 +87,7 @@
 
   # Enable sound with pipewire.
   #sound.enable = true; #dont need this anymore
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -112,7 +111,11 @@
   users.users.evgeni = {
     isNormalUser = true;
     description = "Evgeni";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       firefox
@@ -121,7 +124,10 @@
     ];
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -132,9 +138,9 @@
     vim
   ];
   environment.sessionVariables = {
-      FLAKE = "/etc/nixos/";
-    };
-  
+    FLAKE = "/etc/nixos/";
+  };
+
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     lua-language-server
