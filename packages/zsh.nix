@@ -1,4 +1,5 @@
-{ lib, config, ... }: {
+{ lib, config, ... }:
+{
   options = {
     zsh.enableModule = lib.mkEnableOption "enbable zsh";
   };
@@ -6,15 +7,15 @@
     programs.zsh = {
       enable = true;
       enableCompletion = true;
-      
+
       syntaxHighlighting.enable = true;
-      autosuggestion.enable = true;            
+      autosuggestion.enable = true;
       dotDir = ".config/zsh";
       shellAliases = {
-        v = "nix run /home/evgeni/.config/nixvim";
+        v = "nvim";
         ls = "lsd";
       };
-      initExtra = ''                                                              
+      initExtra = ''
         [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh      
         (cat ~/.cache/wal/sequences &)                                            
         cat ~/.cache/wal/sequences                                                
@@ -24,7 +25,13 @@
       zplug = {
         enable = true;
         plugins = [
-          { name = "romkatv/powerlevel10k"; tags = [ "as:theme" "depth:1" ]; }
+          {
+            name = "romkatv/powerlevel10k";
+            tags = [
+              "as:theme"
+              "depth:1"
+            ];
+          }
         ];
       };
     };
