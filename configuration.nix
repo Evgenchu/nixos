@@ -7,6 +7,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./modules/flake-updater.nix
   ];
 
   # Bootloader.
@@ -140,6 +141,13 @@
   ];
   environment.sessionVariables = {
     FLAKE = "/etc/nixos/";
+  };
+
+  services.flakeUpdater = {
+    enable = true;
+    flakePath = "~/.config/nixvim/";
+    user = "evgeni";
+    startTime = "Sun *-*-* 20:00:00";
   };
 
   programs.nix-ld.enable = true;
