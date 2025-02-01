@@ -4,6 +4,7 @@
   imports = [
     ./zsh.nix
     ./stable.nix
+    ./anacron.nix
   ];
 
   zsh.enableModule = lib.mkDefault true;
