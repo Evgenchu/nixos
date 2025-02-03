@@ -75,7 +75,7 @@
       variant = "";
     };
   };
-
+  #auto store optimisation
   nix.settings.auto-optimise-store = true;
 
   # Enable CUPS to print documents.
@@ -147,7 +147,7 @@
     enable = true;
     flakePath = "~/.config/nixvim/";
     user = "evgeni";
-    startTime = "Sun *-*-* 20:00:00";
+    startTime = "Mon *-*-* 22:28:00";
   };
 
   programs.nix-ld.enable = true;

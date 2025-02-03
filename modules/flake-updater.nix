@@ -48,6 +48,10 @@ in
       script = ''
         cd ${cfg.flakePath}
         ${pkgs.nix}/bin/nix flake update
+        /run/current-system/sw/bin/ssh-add ~.ssh/id_rsa
+        ${pkgs.git}/bin/git add .
+        ${pkgs.git}/bin/git commit -m "flake updater"
+        ${pkgs.git}/bin/git push
       '';
       serviceConfig = {
         Type = "oneshot";
