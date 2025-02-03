@@ -145,9 +145,9 @@
 
   services.flakeUpdater = {
     enable = true;
-    flakePath = "~/.config/nixvim/";
+    flakePath = "/home/evgeni/.config/nixvim/";
     user = "evgeni";
-    startTime = "Mon *-*-* 22:28:00";
+    startTime = "Sun *-*-* 20:00:00";
   };
 
   programs.nix-ld.enable = true;

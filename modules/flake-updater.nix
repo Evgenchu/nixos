@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 
@@ -23,7 +22,7 @@ in
     user = mkOption {
       type = types.str;
       description = "User under which the service will run";
-      default = "root";
+      default = "evgeni";
     };
 
     startTime = mkOption {
@@ -45,17 +44,11 @@ in
 
     systemd.services.flake-updater = {
       description = "Weekly flake update service";
-      script = ''
-        cd ${cfg.flakePath}
-        ${pkgs.nix}/bin/nix flake update
-        /run/current-system/sw/bin/ssh-add ~.ssh/id_rsa
-        ${pkgs.git}/bin/git add .
-        ${pkgs.git}/bin/git commit -m "flake updater"
-        ${pkgs.git}/bin/git push
-      '';
       serviceConfig = {
-        Type = "oneshot";
         User = cfg.user;
+        WorkingDirectory = cfg.flakePath;
+        Environment = "PATH=/run/current-system/sw/bin:$PATH";
+        ExecStart = "/bin/sh -c 'eval \"$(ssh-agent -s)\" && ssh-add /home/${cfg.user}/.ssh/id_rsa && nix flake update && git add . && git commit -m \"Update flake\" && git push'";
       };
     };
   };
