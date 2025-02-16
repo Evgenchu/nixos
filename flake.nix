@@ -53,6 +53,7 @@
       };
       devShells.${system} = {
         python = pkgs.callPackage ./shells/pythonShell.nix { inherit pkgs; };
+        go = pkgs.callPackage ./shells/goShell.nix { inherit pkgs; };
       };
     };
 }
