@@ -18,7 +18,8 @@
         [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh      
         (cat ~/.cache/wal/sequences &)                                            
         cat ~/.cache/wal/sequences                                                
-        bindkey '^R' history-incremental-search-backward 
+        bindkey '^R' history-incremental-search-backward
+        set -o vi
         fastfetch
       '';
       zplug = {
