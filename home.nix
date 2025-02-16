@@ -24,7 +24,6 @@
   home.packages = with pkgs; [
     fd
     ripgrep
-    python3
     gcc
     fastfetch
     discord
@@ -53,7 +52,6 @@
     zip
     awscli2
     kubelogin
-    python312Packages.pip
     obs-studio
     docker-compose
     zathura
