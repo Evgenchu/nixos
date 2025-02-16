@@ -6,9 +6,9 @@
 }:
 {
   options = {
-    vscode.enableModule = lib.mkEnableOption "enable vscode";
+    vscode.enable = lib.mkEnableOption "enable vscode";
   };
-  config = lib.mkIf config.vscode.enableModule {
+  config = lib.mkIf config.vscode.enable {
     programs.vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
