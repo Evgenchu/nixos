@@ -82,7 +82,7 @@
   services.printing.enable = true;
 
   # Virtualization part
-  virtualisation.docker.enable = true;
+  #virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 

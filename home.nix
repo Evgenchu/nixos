@@ -29,8 +29,6 @@
     discord
     btop
     pywal
-    minikube
-    kubectl
     killall
     unzip
     p7zip
@@ -51,9 +49,7 @@
     cmatrix
     zip
     awscli2
-    kubelogin
     obs-studio
-    docker-compose
     zathura
     pciutils
     ffmpeg
