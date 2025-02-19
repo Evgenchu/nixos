@@ -42,8 +42,6 @@
     openssl
     freerdp
     cargo
-    go
-    gotools
     lazygit
     gh
     cmatrix
