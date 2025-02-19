@@ -13,6 +13,7 @@
       enable = true;
       extensions = with pkgs.vscode-extensions; [
         dracula-theme.theme-dracula
+        ms-vscode-remote.remote-containers
       ];
     };
   };
