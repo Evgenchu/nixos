@@ -12,8 +12,9 @@
     programs.vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
-        dracula-theme.theme-dracula
         ms-vscode-remote.remote-containers
+        github.vscode-github-actions
+        ms-python.python
       ];
     };
   };

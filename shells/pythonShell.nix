@@ -1,5 +1,7 @@
-  { pkgs ? import <nixpkgs> {} }:
-  pkgs.mkShell {
+{
+  pkgs ? import <nixpkgs> { },
+}:
+pkgs.mkShell {
   packages = [
     (pkgs.python3.withPackages (python-pkgs: [
       python-pkgs.tkinter
@@ -9,6 +11,6 @@
     ]))
   ];
   shellHook = ''
-    zsh
+    exec zsh
   '';
 }
