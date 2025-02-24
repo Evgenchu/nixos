@@ -5,9 +5,11 @@
     ./zsh.nix
     ./stable.nix
     ./vscode.nix
+    ./steam.nix
   ];
 
   zsh.enableModule = lib.mkDefault true;
   stable.enable = lib.mkDefault true;
   vscode.enable = lib.mkDefault true;
+  steamModule.enable = lib.mkDefault true;
 }

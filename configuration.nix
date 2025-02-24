@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -49,21 +54,28 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
   #NVIDIA stuff
-  # hardware.graphics = {
-  #   enable = true;
-  #   #driSupport = true;
-  #   enable32Bit = true;
-  # };
-  # services.xserver.videoDrivers = [ "nvidia" ];
-  # hardware.nvidia = {
-  #   modesetting.enable = true;
-  #   powerManagement.enable = false;
-  #   powerManagement.finegrained = false;
-  #   open = false;
-  #   nvidiaSettings = true;
-  #   package = config.boot.kernelPackages.nvidiaPackages.stable;
-  # };
+  hardware.graphics = {
+    enable = true;
+  };
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    powerManagement.finegrained = true;
+    open = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+      nvidiaBusId = "PCI:01:00:0";
+      amdgpuBusId = "PCI:05:00:0";
+    };
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -136,6 +148,7 @@
     vim
     inputs.nixvim.packages.x86_64-linux.default
   ];
+
   environment.sessionVariables = {
     FLAKE = "/etc/nixos/";
   };
