@@ -149,6 +149,12 @@
     inputs.nixvim.packages.x86_64-linux.default
   ];
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
   environment.sessionVariables = {
     FLAKE = "/etc/nixos/";
   };
