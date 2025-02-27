@@ -48,7 +48,6 @@
     zip
     awscli2
     obs-studio
-    zathura
     pciutils
     ffmpeg
     yazi
