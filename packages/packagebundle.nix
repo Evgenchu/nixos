@@ -5,6 +5,7 @@
     ./zsh.nix
     ./stable.nix
     ./vscode.nix
+    ./zathura.nix
   ];
 
   zsh.enableModule = lib.mkDefault true;
