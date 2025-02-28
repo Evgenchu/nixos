@@ -38,7 +38,6 @@
     usbutils
     gdb
     fzf
-    openvpn
     openssl
     freerdp
     cargo
