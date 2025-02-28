@@ -50,7 +50,6 @@
     obs-studio
     pciutils
     ffmpeg
-    yazi
     lsd
     luarocks
     lua
