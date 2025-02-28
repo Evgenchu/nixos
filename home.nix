@@ -38,7 +38,6 @@
     usbutils
     gdb
     fzf
-    openvpn
     openssl
     freerdp
     cargo
@@ -50,7 +49,6 @@
     obs-studio
     pciutils
     ffmpeg
-    yazi
     lsd
     luarocks
     lua
