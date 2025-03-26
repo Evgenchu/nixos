@@ -14,6 +14,7 @@
       profiles.default.extensions = with pkgs.vscode-extensions; [
         ms-vscode-remote.remote-containers
         github.vscode-github-actions
+        vscodevim.vim
       ];
     };
   };
