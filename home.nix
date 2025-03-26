@@ -23,6 +23,7 @@
   # environment.
   home.packages = with pkgs; [
     fd
+    azure-cli
     ripgrep
     gcc
     fastfetch
