@@ -194,17 +194,17 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1742910508,
-        "narHash": "sha256-C/vmuQlZYf8+hhGixoZTL3DQsFDiPUb/zdxMPTajK2A=",
-        "ref": "refs/heads/master",
-        "rev": "4e9a0d09c325f2cdf226b6beef15d2fe8ea5a7fb",
-        "revCount": 50,
-        "type": "git",
-        "url": "ssh://git@github.com/Evgenchu/nixvim_flake"
+        "lastModified": 1743972806,
+        "narHash": "sha256-e8mEYlTx3Dtq2ptvOb/RiGTjo+0/2W5vTmkQi7J0MdM=",
+        "owner": "Evgenchu",
+        "repo": "nixvim_flake",
+        "rev": "6529da08ed80fd3d5e9a98f630ebe6af469d48b2",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/Evgenchu/nixvim_flake"
+        "owner": "Evgenchu",
+        "repo": "nixvim_flake",
+        "type": "github"
       }
     },
     "nixvim_2": {

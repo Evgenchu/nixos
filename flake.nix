@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixvim.url = "git+ssh://git@github.com/Evgenchu/nixvim_flake";
+    nixvim.url = "github:Evgenchu/nixvim_flake";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +26,29 @@
     in
     {
       nixosConfigurations = {
+        nixos-tablet = nixpkgs.lib.nixosSystem rec {
+          inherit system;
+          specialArgs = {
+            pkgs-stable = import nixpkgs-stable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+            inherit inputs;
+          };
+          modules = [
+            ./lenovo-tablet/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useUserPackages = true;
+                extraSpecialArgs = specialArgs;
+                users.evgeni = {
+                  imports = [ ./home.nix ];
+                };
+              };
+            }
+          ];
+        };
         nixos = nixpkgs.lib.nixosSystem rec {
           inherit system;
           specialArgs = {
